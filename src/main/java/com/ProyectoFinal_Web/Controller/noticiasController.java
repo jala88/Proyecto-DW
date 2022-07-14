@@ -1,4 +1,4 @@
-package com.noticiasController;
+package com.ProyectoFinal_Web.Controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Slf4j
 public class noticiasController {
 
-    /*
-    @GetMapping("/Noticias/noticias")
+    @GetMapping("/noticias/noticias")
     public String inicio() {
-        log.info("MVC");
-        return "noticias";
+        return "/noticias/noticias";
     }
-     */
+    
+    /*
     @RequestMapping(path = "/Noticias/noticias", method = RequestMethod.GET)
     public String noticias() {
         System.out.println("mvc");
         return "noticias";
     }
+     */
 }

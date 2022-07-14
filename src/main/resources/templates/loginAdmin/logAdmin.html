@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="UTF-8">
+        <title>Administrator login</title>        
+        <link href="/css/logins.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    <header class="header">
+        <nav class="nav">
+            <a class="logo nav-link">Audit System</a>                 
+            <ul class="nav-menu">        
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}">Home</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginUsuario/logUser}">User Login</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginAdmin/logAdmin}">Admin Login</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}">News</a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body>
+    <section class="form-login">
+        <h5>Administrator login</h5>
+        <input class="controls" type="text" name="usuario" value="" placeholder="User">
+        <input class="controls" type="password" name="contrasena" value="" placeholder="Password">
+        <input class="buttons" type="submit" name="sign in" value="Sign in">
+        <p><a href="#">¿Forgot Password?</a></p>
+    </section>
+
+</body>
+</html>
