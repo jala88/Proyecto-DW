@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Modificar solicitud</title>
+        <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    <header class="header">
+        <nav class="nav">
+            <a class="logo nav-link">Audit System</a>                 
+            <ul class="nav-menu">        
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}">Home</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/solicitarAuditoria/solicitar}">Solicitar auditoria</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginUsuario/logUser}">User Login</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginAdmin/logAdmin}">Admin Login</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}">News</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/fqa/fqa}">FQA</a></li>
+                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/material/material}">Material de apoyo</a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body>
+    <div>
+        <br>
+        <br>
+        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Modificar una solicitud</h1>
+        <br>
+        <br>
+        <h2>Solicitud a modificar</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <div style="color: black;">
+            <form th:action="@{/solicitarAuditoria/guardarSolicitud}"
+                  method="post"
+                  th:object="${solicitud}">
+                <input type="hidden" name="id_Solicitud" th:field="*{id_Solicitud}"/>
+                <label for="nombre">Nombre del solicitante:</label>
+                <input type="text" name="nombre" th:field="*{nombre_solicitante}"/>
+                <br>
+                <label for="correo">Correo del solicitante:</label>
+                <input type="email" name="correo" th:field="*{correo}"/>
+                <br>
+                <label for="telefono">Telefono del solicitante:</label>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
+                <br>
+                <label for="cedula">Cedula del solicitante:</label>
+                <input type="text" name="cedula" th:field="*{cedula}"/>
+                <br>
+                <label for="puesto">Puesto del solicitante:</label>
+                <input type="text" name="puesto" th:field="*{puesto}">
+                <br>
+                <label for="empresa">Empresa del solicitante:</label>
+                <input type="text" name="empresa" th:field="*{empresa}"/>
+                <br>
+                <label for="area_empre">Area de la empresa a auditar:</label>
+                <input type="text" name="area_empre" th:field="*{area_empre}"/>
+                <br>
+                <label for="ced_empre">Cedula juridica de la empresa:</label>
+                <input type="text" name="ced_empre" th:field="*{ced_empre}"/>
+                <br>
+                <label for="correo_empre">Correo de la empresa:</label>
+                <input type="email" name="correo_empre" th:field="*{correo_empre}"/>
+                <br>
+                <label for="direccion_empre">Direccion de la solicitante:</label>
+                <input type="text" name="direccion_empre" th:field="*{direccion_empre}"/>
+                <br>
+                <input type="submit" name="guardar" value="Guardar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

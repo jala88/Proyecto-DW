@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FQA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body style="background-color: #29b1b7">
+        <div class="row">
+            <div class="col-3" id="sidebar" style="background-color: lightgray;">
+                <div class="row">
+                    <div class="mx-auto" style="width: 250px;">
+                        <img src="https://imgs.search.brave.com/prs_70H82jzm39dNmP0z5nh2xy7Y4JPJgXN-fDGWxik/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5R/OXJzWnBkNHRjVmRa/QW1lQ2hndFhBSGFI/YSZwaWQ9QXBp"
+                             alt="" class="rounded-circle" id="imagen">
+                    </div>
+                    <div class="row" style="gap:85px">
+                        <button class="btn btn-light" id="btn"><a th:href="@{/}">Inicio</a></button>
+                        <button class="btn btn-light" id="btn">Administrar auditoria</button>
+                        <button class="btn btn-light" id="btn">Generar informe</button>
+                        <button class="btn btn-light" id="btn">Ultimas noticias</button>
+                        <button class="btn btn-light" id="btn">Material de apoyo</button>
+
+                    </div>
+                    <div class="col-xs-12" style="height:200px;"></div>
+                    <button class="btn btn-light" id="cerrar-sesion">Cerrar sesion</button>
+                </div>
+            </div>
+            <section id="sectionf">
+                <article>
+                    <header><h1><span style="color: #000;">FQA. Preguntas frecuentes. </span></h1></header>
+                    <div class="col-9">
+                        <div class="col" id="centerf">
+                            <div class="col-md-8 offset-md-2">
+                                <div class="row" id="fqa">
+                                    <details> 
+                                        <summary>FQA1. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
+                                            tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lacus conubia porttitor, 
+                                                lobortis congue potenti nisl penatibus porta nostra placerat litora proin, 
+                                                convallis etiam aptent purus orci duis venenatis dui a. 
+                                                Semper ultricies malesuada cum cras et vestibulum augue auctor varius condimentum, 
+                                                feugiat dignissim bibendum quisque proin congue conubia nostra penatibus, 
+                                                odio ad volutpat habitasse metus egestas cubilia non fermentum. 
+                                                Lacus volutpat turpis enim malesuada accumsan inceptos nostra lectus faucibus 
+                                                mus netus congue aenean hendrerit cum, 
+                                                fermentum arcu curae magna neque porta torquent varius urna aptent ridiculus ac eros.</p>
+                                        </div>
+                                    </details>
+                                    <br>
+                                    <details> 
+                                        <summary>FQA2. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
+                                            tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ridiculus, risus justo orci consequat dapibus dui cursus, etiam commodo odio mollis vivamus ultrices mus. Imperdiet fusce fames curabitur vulputate integer morbi nascetur bibendum quam, congue rhoncus placerat justo aenean conubia sodales quis, cursus parturient eget hendrerit malesuada ac fermentum dictumst. Mi convallis ligula accumsan laoreet placerat sapien diam sociis, aptent himenaeos montes ornare magna vivamus a porta, integer scelerisque sem inceptos condimentum cras porttitor. Enim aliquam sollicitudin suscipit parturient cursus ante tempus vitae feugiat aliquet, dignissim fringilla euismod malesuada penatibus porttitor posuere risus facilisi quis, nisl id et lacinia volutpat nam commodo est egestas.
+
+                                                Non auctor vestibulum lacinia et est nostra curae potenti metus gravida, imperdiet accumsan a rutrum scelerisque nec primis ultrices nam varius curabitur, consequat nunc interdum pellentesque integer velit ante congue aenean. A ac viverra etiam congue neque auctor netus leo facilisis, nisi felis senectus augue potenti aenean feugiat vehicula, mattis dictumst lectus et lacus sapien porta libero. Pellentesque porttitor neque leo torquent tellus blandit ultricies donec dapibus nunc, libero convallis litora arcu sociosqu vulputate volutpat curae lacus metus enim, felis quam cubilia aptent egestas sagittis eros praesent laoreet. Interdum sed hendrerit integer porttitor vitae eleifend lacus dapibus dis, placerat iaculis erat rutrum varius dictumst aptent habitasse tortor, id egestas aliquam dignissim sociis donec luctus ligula.</p>
+
+                                        </div>
+                                    </details>
+                                    <br>
+                                    <details> 
+                                        <summary>FQA3. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
+                                            tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
+                                        <div>
+                                            <p>Imperdiet fusce fames curabitur vulputate integer morbi nascetur bibendum quam, congue rhoncus placerat justo aenean conubia sodales quis, cursus parturient eget hendrerit malesuada ac fermentum dictumst. Mi convallis ligula accumsan laoreet placerat sapien diam sociis, aptent himenaeos montes ornare magna vivamus a porta, integer scelerisque sem inceptos condimentum cras porttitor. Enim aliquam sollicitudin suscipit parturient cursus ante tempus vitae feugiat aliquet, dignissim fringilla euismod malesuada penatibus porttitor posuere risus facilisi quis, nisl id et lacinia volutpat nam commodo est egestas.</p>
+                                        </div>
+                                    </details>
+                                    <br>
+                                    <details> 
+                                        <summary>FQA4. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
+                                            tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lacus conubia porttitor, 
+                                                lobortis congue potenti nisl penatibus porta nostra placerat litora proin, 
+                                                convallis etiam aptent purus orci duis venenatis dui a. 
+                                                Semper ultricies malesuada cum cras et vestibulum augue auctor varius condimentum, 
+                                                feugiat dignissim bibendum quisque proin congue conubia nostra penatibus, 
+                                                odio ad volutpat habitasse metus egestas cubilia non fermentum. 
+                                                Lacus volutpat turpis enim malesuada accumsan inceptos nostra lectus faucibus 
+                                                mus netus congue aenean hendrerit cum, 
+                                                fermentum arcu curae magna neque porta torquent varius urna aptent ridiculus ac eros.</p>
+                                        </div>
+                                    </details>
+                                    </details>
+                                    <br>
+                                    <details> 
+                                        <summary>FQA5. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
+                                            tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
+                                        <div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ridiculus, risus justo orci consequat dapibus dui cursus, etiam commodo odio mollis vivamus ultrices mus. Imperdiet fusce fames curabitur vulputate integer morbi nascetur bibendum quam, congue rhoncus placerat justo aenean conubia sodales quis, cursus parturient eget hendrerit malesuada ac fermentum dictumst. Mi convallis ligula accumsan laoreet placerat sapien diam sociis, aptent himenaeos montes ornare magna vivamus a porta, integer scelerisque sem inceptos condimentum cras porttitor. Enim aliquam sollicitudin suscipit parturient cursus ante tempus vitae feugiat aliquet, dignissim fringilla euismod malesuada penatibus porttitor posuere risus facilisi quis, nisl id et lacinia volutpat nam commodo est egestas.
+
+                                                Non auctor vestibulum lacinia et est nostra curae potenti metus gravida, imperdiet accumsan a rutrum scelerisque nec primis ultrices nam varius curabitur, consequat nunc interdum pellentesque integer velit ante congue aenean. A ac viverra etiam congue neque auctor netus leo facilisis, nisi felis senectus augue potenti aenean feugiat vehicula, mattis dictumst lectus et lacus sapien porta libero. Pellentesque porttitor neque leo torquent tellus blandit ultricies donec dapibus nunc, libero convallis litora arcu sociosqu vulputate volutpat curae lacus metus enim, felis quam cubilia aptent egestas sagittis eros praesent laoreet. Interdum sed hendrerit integer porttitor vitae eleifend lacus dapibus dis, placerat iaculis erat rutrum varius dictumst aptent habitasse tortor, id egestas aliquam dignissim sociis donec luctus ligula.</p>
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <br>
+            </section>            
+        </div>
+    </body>
+</html>
