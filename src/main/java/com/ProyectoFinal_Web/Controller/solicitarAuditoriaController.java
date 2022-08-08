@@ -41,7 +41,7 @@ public class solicitarAuditoriaController {
         model.addAttribute("solicitud", solicitud);
         return "/solicitarAuditoria/modifica";
     }
-    
+
     @GetMapping("/solicitarAuditoria/eliminar/{id_Solicitud}")
     public String eliminarSolicitud(solicitarAuditoria solicitud) {
         solicitudServices.delete(solicitud);

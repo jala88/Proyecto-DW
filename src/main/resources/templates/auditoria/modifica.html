@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://wwww.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Welcome</title>
+        <title>Modificar Auditoria</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     <header class="header">
@@ -26,25 +26,32 @@
     <div>
         <br>
         <br>
-        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Welcome!</h1>
+        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Modificar una solicitud</h1>
         <br>
         <br>
-        <center>
-            <figure>
-                <img src="/imagenes/Logo.png" width="350" height="350" />
-            </figure>
-        </center>
-        <br>
-        <br>
-        <h2 style="background-color:#29b1b7; text-align:center;font-family:sans-serif"> Constant updating and continuous improvement. </h2>
+        <h2>Auditoria a modificar</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <div style="color: black;">
+            <form th:action="@{/auditoria/guardarAuditoria}"
+                  method="post"
+                  th:object="${auditoria}">
+                <input type="hidden" name="id_Auditoria" th:field="*{id_Auditoria}"/>
+                <label for="nombre">Nombre del Auditor encargado:</label>
+                <input type="text" name="nombre" th:field="*{auditor}"/>
+                <br>
+                <label for="fecha">fecha en que se realizo la auditoria</label>
+                <input type="text" name="fecha" th:field="*{fecha}"/>
+                <br>
+                <label for="areaAuditada">Area auditada</label>
+                <input type="text" name="areaAuditada" th:field="*{area_auditada}"/>
+                <br>
+                <label for="calificacion">Calificacion de la auditoria</label>
+                <input type="text" name="calificacion" th:field="*{calificacion}"/>
+                <br>
+                <input type="submit" name="guardar" value="Guardar">
+            </form>
+        </div>
     </div>
-    <div style="text-align: center">
-        <p>
-    </div>
-    <br>
-    <br>
-<center>
-    <footer style="color: black"><p> All rights reserved; 2022</p></footer>
-</center>
 </body>
 </html>

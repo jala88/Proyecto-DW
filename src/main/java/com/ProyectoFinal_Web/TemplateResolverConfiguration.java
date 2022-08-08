@@ -1,4 +1,3 @@
-
 package com.ProyectoFinal_Web;
 
 import org.springframework.context.annotation.Bean;
@@ -12,7 +11,7 @@ import org.thymeleaf.templatemode.TemplateMode;
  */
 @Configuration
 public class TemplateResolverConfiguration {
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_0() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -24,7 +23,7 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_1() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -36,7 +35,7 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_2() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -49,7 +48,6 @@ public class TemplateResolverConfiguration {
         return templateResolver;
     }
 
-    
     @Bean
     public SpringResourceTemplateResolver templatesResolver_3() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -61,7 +59,7 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_5() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -73,7 +71,7 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_6() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -85,7 +83,7 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
     @Bean
     public SpringResourceTemplateResolver templatesResolver_7() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -97,7 +95,32 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    
+
+    @Bean
+    public SpringResourceTemplateResolver templatesResolver_8() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setPrefix("templates/auditor");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setOrder(8);
+        templateResolver.setCheckExistence(true);
+        return templateResolver;
+    }
+
+    @Bean
+    public SpringResourceTemplateResolver templatesResolver_9() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setPrefix("templates/auditoria");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setOrder(9);
+        templateResolver.setCheckExistence(true);
+        return templateResolver;
+    }
+
+
     /*
     @Bean
     public SpringResourceTemplateResolver templatesResolver_4() {
@@ -110,5 +133,5 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }
-    */
+     */
 }
