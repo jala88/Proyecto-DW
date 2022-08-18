@@ -1,56 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://wwww.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>Solicitar auditoria</title>
+        <title th:text="#{solicitar.titulo}">Solicitar auditoria</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-    <header class="header">
-        <nav class="nav">
-            <a class="logo nav-link">Audit System</a>                 
-            <ul class="nav-menu">        
-                <ul class="nav-menu">        
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}">Home</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/solicitarAuditoria/solicitar}">Solicitar auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditor/auditor}">Voluntarios para auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}">Auditorias</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}">Auditorias</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}">Auditorias</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginUsuario/logUser}">User Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginAdmin/logAdmin}">Admin Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}">News</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/fqa/fqa}">FQA</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/material/material}">Material de apoyo</a></li>
-            </ul>
-            </ul>
-        </nav>
-    </header>
 </head>
 <body>
+    <header th:replace="layout/plantilla :: header"/>
+    
     <div>
         <br>
         <br>
-        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Solicite una auditoria!</h1>
+        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{solicitar.mensaje1}">Solicite una auditoria!</h1>
         <br>
         <br>
-        <h2 style="color: black; text-align:center">Lista de solicitudes de auditorias</h2>
-        <a th:href="@{/solicitarAuditoria/nuevaSolicitud}">Nueva Solicitud</a>
+        <h2 style="color: black; text-align:center" th:text="#{solicitar.mensaje2}">Lista de solicitudes de auditorias</h2>
+        <a th:href="@{/solicitarAuditoria/nuevaSolicitud}" th:text="#{solicitar.nuevo}">Nueva Solicitud</a>
         <div th:if="${solicitudes!=null and !solicitudes.empty}">
             <table border="1" style="color: black; text-align: center;">
                 <thead>
                     <tr>
-                        <th>Nombre Solicitante</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Cedula</th>
-                        <th>Puesto</th>
-                        <th>Empresa</th>
-                        <th>Area a Auditar</th>
-                        <th>Cedula juridica de la empresa</th>
-                        <th>Correo de la empresa</th>
-                        <th>Direccion de la empresa</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
+                        <th th:text="#{solicitar.nombre}">Nombre Solicitante</th>
+                        <th th:text="#{solicitar.correo}">Correo</th>
+                        <th th:text="#{solicitar.telefono}">Telefono</th>
+                        <th th:text="#{solicitar.cedula}">Cedula</th>
+                        <th th:text="#{solicitar.puesto}">Puesto</th>
+                        <th th:text="#{solicitar.empresa}">Empresa</th>
+                        <th th:text="#{solicitar.AAA}">Area a Auditar</th>
+                        <th th:text="#{solicitar.cedulaJ}">Cedula juridica de la empresa</th>
+                        <th th:text="#{solicitar.correoE}">Correo de la empresa</th>
+                        <th th:text="#{solicitar.direccionE}">Direccion de la empresa</th>
+                        <th th:text="#{accion.actualizar}">Modificar</th>
+                        <th th:text="#{accion.eliminar}">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,8 +55,9 @@
             </table>
         </div>
         <div th:if="${solicitudes == null or solicitudes.empty}"> 
-            <p style="color: black;">En este momento no tenemos ninguna solicitud de auditoria</p>
+            <p style="color: black;" th:text="#{solicitar.mensaje3}">En este momento no tenemos ninguna solicitud de auditoria</p>
         </div>
     </div>
+    <footer th:replace="layout/plantilla :: footer"/>
 </body>
 </html>

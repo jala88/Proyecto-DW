@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>FQA</title>
+        <title th:text="#{pf.titulo}">PF</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/estilos.css" rel="stylesheet" type="text/css"/>
@@ -17,20 +19,20 @@
                              alt="" class="rounded-circle" id="imagen">
                     </div>
                     <div class="row" style="gap:85px">
-                        <button class="btn btn-light" id="btn"><a th:href="@{/}">Inicio</a></button>
-                        <button class="btn btn-light" id="btn">Administrar auditoria</button>
-                        <button class="btn btn-light" id="btn">Generar informe</button>
-                        <button class="btn btn-light" id="btn">Ultimas noticias</button>
-                        <button class="btn btn-light" id="btn">Material de apoyo</button>
+                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
 
                     </div>
                     <div class="col-xs-12" style="height:200px;"></div>
-                    <button class="btn btn-light" id="cerrar-sesion">Cerrar sesion</button>
+                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
                 </div>
             </div>
             <section id="sectionf">
                 <article>
-                    <header><h1><span style="color: #000;">FQA. Preguntas frecuentes. </span></h1></header>
+                    <header><h1><span style="color: #000;" th:text="#{pd.pf}">PF. Preguntas frecuentes. </span></h1></header>
                     <div class="col-9">
                         <div class="col" id="centerf">
                             <div class="col-md-8 offset-md-2">

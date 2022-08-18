@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface auditoriaService {
 
-    public List<auditoria> getAuditor();
+    public List<auditoria> getAuditoria();
 
     public void save(auditoria auditoria);
 

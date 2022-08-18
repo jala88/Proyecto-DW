@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head>
+        <title th:text="#{aplicacion.titulo}">Plantilla</title>
+        <meta charset="UTF-8">
+            <link href="/css/menu.css" rel="stylesheet" type="text/css"/>      
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a class="logo nav-link" th:text="#{aplicacion.titulo}">Sistema de Auditoria</a>                 
+                <ul class="nav-menu">        
+                    <ul class="nav-menu">        
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}" th:text="#{plantilla.inicio}">Inicio</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/usuarios/usuario}" sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{plantilla.usuarios}">Usuarios</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/solicitarAuditoria/solicitar}" th:text="#{plantilla.solicitarAu}">Solicitar auditoria</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditor/auditor}" sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{plantilla.auditores}">Auditores</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}" th:text="#{plantilla.auditorias}">Auditorias</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}" th:text="#{plantilla.noticias}">Noticias</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/fqa/fqa}" th:text="#{plantilla.pf}">PF</a></li>
+                        <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/material/material}" th:text="#{plantilla.materialAp}">Material de apoyo</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </header>
+
+        <footer th:fragment="footer" class="footer"> 
+            <div>
+                <p style="color: black" th:text="#{plantilla.derechos}"> &COPY; Derechos Reservados; 2022</p>
+                <form method="POST" th:action="@{/logout}" style="display: inline">                    
+                    <a href="#" onclick="this.parentNode.submit();" th:text="#{accion.cerraS}">Cerrar sesion</a> || 
+                </form>
+                <a th:href="@{/(lang=es)}">ES</a> ||
+                <a th:href="@{/(lang=en)}">EN</a> ||
+            </div>
+        </footer>
+
+    </body>
+</html>

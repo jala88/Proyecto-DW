@@ -15,7 +15,7 @@ public class auditoriaServiceImpl implements auditoriaService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<auditoria> getAuditor() {
+    public List<auditoria> getAuditoria() {
         return (List<auditoria>) auditoriaDao.findAll();
     }
 
@@ -36,4 +36,5 @@ public class auditoriaServiceImpl implements auditoriaService {
     public auditoria getAuditoria(auditoria auditoria) {
         return auditoriaDao.findById(auditoria.getId_Auditoria()).orElse(null);
     }
+    
 }

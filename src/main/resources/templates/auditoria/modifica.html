@@ -1,57 +1,51 @@
 <!DOCTYPE html>
-<html xmlns:th="http://wwww.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>Modificar Auditoria</title>
+        <title th:text="#{auditoriaM.titulo}">Modificar Auditoria</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-    <header class="header">
-        <nav class="nav">
-            <a class="logo nav-link">Audit System</a>                 
-            <ul class="nav-menu">        
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}">Home</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/solicitarAuditoria/solicitar}">Solicitar auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditor/auditor}">Voluntarios para auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}">Auditorias</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginUsuario/logUser}">User Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginAdmin/logAdmin}">Admin Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}">News</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/fqa/fqa}">FQA</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/material/material}">Material de apoyo</a></li>
-            </ul>
-        </nav>
-    </header>
 </head>
 <body>
+    <header th:replace="layout/plantilla :: header"/>
     <div>
         <br>
         <br>
-        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Modificar una solicitud</h1>
+        <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{auditoriaM.mensaje1}">Modificar una solicitud</h2>
         <br>
         <br>
-        <h2>Auditoria a modificar</h2>
-        <a th:href="@{/}">Regresar</a>
+        <h2 th:text="#{auditoriaM.mensaje2}">Auditoria a modificar</h2>
+        <a th:href="@{/}" th:text="#{accion.regresar}">Regresar</a>
         <br/>
         <div style="color: black;">
+            
             <form th:action="@{/auditoria/guardarAuditoria}"
                   method="post"
                   th:object="${auditoria}">
+                
                 <input type="hidden" name="id_Auditoria" th:field="*{id_Auditoria}"/>
-                <label for="nombre">Nombre del Auditor encargado:</label>
+                <label for="nombre" th:text="#{auditoriaM.nombre}">Nombre del Auditor encargado:</label>
                 <input type="text" name="nombre" th:field="*{auditor}"/>
                 <br>
-                <label for="fecha">fecha en que se realizo la auditoria</label>
+                    
+                <label for="fecha" th:text="#{auditoriaM.fecha}">Fecha en que se realizo la auditoria</label>
                 <input type="text" name="fecha" th:field="*{fecha}"/>
                 <br>
-                <label for="areaAuditada">Area auditada</label>
+                    
+                <label for="areaAuditada" th:text="#{auditoriaM.area}">Area auditada</label>
                 <input type="text" name="areaAuditada" th:field="*{area_auditada}"/>
                 <br>
-                <label for="calificacion">Calificacion de la auditoria</label>
+                    
+                <label for="calificacion" th:text="#{auditoriaM.calificacion}">Calificacion de la auditoria</label>
                 <input type="text" name="calificacion" th:field="*{calificacion}"/>
                 <br>
-                <input type="submit" name="guardar" value="Guardar">
+                    
+                <input type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}">
             </form>
         </div>
+        
     </div>
+    <footer th:replace="layout/plantilla :: footer"/>
 </body>
 </html>

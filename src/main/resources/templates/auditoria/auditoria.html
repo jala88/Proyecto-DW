@@ -1,46 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="http://wwww.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>Auditorias</title>
+        <title th:text="#{auditoria.titulo}">Auditorias</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-    <header class="header">
-        <nav class="nav">
-            <a class="logo nav-link">Audit System</a>                 
-            <ul class="nav-menu">        
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/}">Home</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/solicitarAuditoria/solicitar}">Solicitar auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditor/auditor}">Voluntarios para auditoria</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/auditoria/auditoria}">Auditorias</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginUsuario/logUser}">User Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/loginAdmin/logAdmin}">Admin Login</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/noticias/noticias}">News</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/fqa/fqa}">FQA</a></li>
-                <li class="nav-menu-item"><a class= "nav-menu-link" th:href="@{/material/material}">Material de apoyo</a></li>
-            </ul>
-        </nav>
-    </header>
-</head>
+    </head>
+
 <body>
+    <header th:replace="layout/plantilla :: header"/>
     <div>
         <br>
         <br>
-        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif">Inscribe la informacion del auditor</h1>
+        <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{auditoria.mensaje1}">Inscribe la informacion de la auditoria</h2>
         <br>
         <br>
-        <h2 style="color: black; text-align:center">Lista de auditorias</h2>
-        <a th:href="@{/auditoria/nuevaAuditoria}">Nueva auditoria</a>
+        <h2 style="color: black; text-align:center" th:text="#{auditoria.lista}">Lista de auditorias</h2>
+        <a th:href="@{/auditoria/nuevaAuditoria}" th:text="#{auditoria.nuevo}">Nueva auditoria</a>
         <div th:if="${auditorias!=null and !auditorias.empty}">
             <table border="1" style="color: black; text-align: center;">
                 <thead>
                     <tr>
-                        <th>Nombre auditor encargado</th>
-                        <th>Fecha</th>
-                        <th>Area auditada</th>
-                        <th>Calificacion</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
+                        <th th:text="#{auditoria.nombre}">Nombre auditor encargado</th>
+                        <th th:text="#{auditoria.fecha}">Fecha</th>
+                        <th th:text="#{auditoria.area}">Area auditada</th>
+                        <th th:text="#{auditoria.calificacion}">Calificacion</th>
+                        <th th:text="#{accion.actualizar}">Modificar</th>
+                        <th th:text="#{accion.eliminar}">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,8 +43,9 @@
             </table>
         </div>
         <div th:if="${auditorias == null or auditorias.empty}"> 
-            <p style="color: black;">En este momento no tenemos ningun auditor en lista</p>
+            <p style="color: black;" th:text="#{auditoria.mensaje2}">En este momento no tenemos ningun auditor en lista</p>
         </div>
     </div>
+    <footer th:replace="layout/plantilla :: footer"/>
 </body>
 </html>

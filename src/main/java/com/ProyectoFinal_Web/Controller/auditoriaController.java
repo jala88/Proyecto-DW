@@ -18,32 +18,32 @@ public class auditoriaController {
 
     @GetMapping("/auditoria/auditoria")
     public String inicio(Model model) {
-        var auditorias = auditoriaService.getAuditor();
+        var auditorias = auditoriaService.getAuditoria();
         model.addAttribute("auditorias", auditorias);
         return "/auditoria/auditoria";
     }
 
     @GetMapping("/auditoria/nuevaAuditoria")
-    public String nuevoAuditor(auditoria auditoria, Model model) {
+    public String nuevoAuditoria(auditoria auditoria, Model model) {
         model.addAttribute("auditoria", auditoria);
         return "/auditoria/modifica";
     }
 
     @PostMapping("/auditoria/guardarAuditoria")
-    public String guardarAuditor(auditoria auditoria) {
+    public String guardarAuditoria(auditoria auditoria) {
         auditoriaService.save(auditoria);
         return "redirect:/auditoria/auditoria";
     }
 
     @GetMapping("/auditoria/modifica/{id_Auditoria}")
-    public String modificarAuditor(auditoria auditoria, Model model) {
+    public String modificarAuditoria(auditoria auditoria, Model model) {
         auditoria = auditoriaService.getAuditoria(auditoria);
         model.addAttribute("auditoria", auditoria);
         return "/auditoria/modifica";
     }
 
-    @GetMapping("/auditor/eliminar/{id_Auditoria}")
-    public String eliminarAuditor(auditoria auditoria) {
+    @GetMapping("/auditoria/eliminar/{id_Auditoria}")
+    public String eliminarAuditoria(auditoria auditoria) {
         auditoriaService.delete(auditoria);
         return "redirect:/auditoria/auditoria";
     }

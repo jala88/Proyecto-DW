@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>Material de apoyo</title>
+        <title th:text="#{material.titulo}">Material de apoyo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/estilos.css" rel="stylesheet" type="text/css"/>
@@ -18,32 +20,32 @@
                     </div>
                     <div class="row" style="gap:85px">
                         <!-- Ponerles un a cada uno para conectarlos a otra pagina -->
-                        <button class="btn btn-light" id="btn"><a th:href="@{/}">Inicio</a></button>
-                        <button class="btn btn-light" id="btn">Administrar auditoria</button>
-                        <button class="btn btn-light" id="btn">Generar informe</button>
-                        <button class="btn btn-light" id="btn">Ultimas noticias</button>
-                        <button class="btn btn-light" id="btn">Material de apoyo</button>
+                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
+                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
                     </div>
                     <div class="col-xs-12" style="height:200px;"></div>
-                    <button class="btn btn-light" id="cerrar-sesion">Cerrar sesion</button>
+                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
                 </div>
             </div>
             <section id="sectionG">
-                <header><h1><span style="color: #000;">Material de apoyo para aprender 5S</span></h1></header>
+                <header><h1><span style="color: #000;" th:text="#{material.titulo2}">Material de apoyo para aprender 5S</span></h1></header>
                 <div class="col-9">
                     <div class="col" id="centerG">
                         <div class="col-md-8 offset-md-2">
                             <div style="background-color: lightgray;" id="guia">
-                                <a href="http://www.menteprofesional.com/organizarte-metodo-5s/">Guia 1</a>
+                                <a href="http://www.menteprofesional.com/organizarte-metodo-5s/" th:text="#{material.guia1}">Guia 1</a>
                             </div>
                             <div style="background-color: lightgray;" id="guia">
-                                <a href="https://www.creativesafetysupply.com/content/education-research/5S-spanish/index.html">Guia 2</a>
+                                <a href="https://www.creativesafetysupply.com/content/education-research/5S-spanish/index.html" th:text="#{material.guia2}">Guia 2</a>
                             </div>
                             <div style="background-color: lightgray;" id="guia">
-                                <a href="https://bibliotecadigital.univalle.edu.co/bitstream/handle/10893/10757/0504131.pdf?sequence=1">Guia 3</a>
+                                <a href="https://bibliotecadigital.univalle.edu.co/bitstream/handle/10893/10757/0504131.pdf?sequence=1" th:text="#{material.guia3}">Guia 3</a>
                             </div>
                             <div style="background-color: lightgray;" id="guia">
-                                <a href="https://www.eumed.net/cursecon/libreria/2004/5s/41.pdf">Guia 4</a>
+                                <a href="https://www.eumed.net/cursecon/libreria/2004/5s/41.pdf" th:text="#{material.guia4}">Guia 4</a>
                             </div>
                         </div>
                     </div>

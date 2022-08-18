@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head>
+        <title th:text="#{usuarios.titulo}">Usuarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div>
+            <br>
+            <br>
+            <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{usuarios.mensaje1}">Listado de usuarios registrados en el sistema</h2>
+            <br>
+            <br>
+            <h2 style="color: black; text-align:center" th:text="#{usuarios.mensaje2}">Lista de usuarios</h2>
+            <a th:href="@{/usuarios/nuevoUsuario}" th:text="#{usuarios.nuevo}">Nuevo usuario</a>
+            <div th:if="${usuarios!=null and !usuarios.empty}">
+                <table border="1" style="color: black; text-align: center;">
+                    <thead>
+                        <tr>
+                            <th th:text="#{usuarios.nombre}">nombre</th>
+                            <th th:text="#{usuarios.correo}">correo</th>
+                            <th th:text="#{usuarios.username}">cedula</th>
+                            <th th:text="#{usuarios.rol}">username</th>
+                            <th th:text="#{usuariosM.rol}">rol</th>
+                            <th th:text="#{accion.actualizar}">Modificar</th>
+                            <th th:text="#{accion.eliminar}">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${usuarios}">
+                            <td th:text="${usuario.nombre}"></td>
+                            <td th:text="${usuario.correo}"></td>
+                            <td th:text="${usuario.cedula}"></td> 
+                            <td th:text="${usuario.username}"></td> 
+                            <td th:text="${usuario.idRol}"></td>
+                            <td><a th:href="@{/usuarios/modifica/} + ${usuario.id_Usuario}">Modificar</a></td>
+                            <td><a th:href="@{/usuarios/eliminar/} + ${usuario.id_Usuario}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${usuarios == null or usuarios.empty}"> 
+                <p style="color: black;" th:text="#{usuarios.mensaje3}">En este momento no tenemos ningun usuario en lista</p>
+            </div>
+        </div>
+
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

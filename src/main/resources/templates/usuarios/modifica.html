@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head>
+        <title th:text="#{usuariosM.titulo}">Modificar Usuarios</title>
+        <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"/> 
+    
+    <div>
+        <br>
+        <br>
+        <h1 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{usuariosM.mensaje1}">Modificar un usuario</h1>
+        <br>
+        <br>
+        <h2 th:text="#{usuariosM.mensaje2}">Usuario a modificar</h2>
+        <a th:href="@{/}" th:text="#{accion.regresar}">Regresar</a>
+        <br/>
+        <div style="color: black;">
+            <form th:action="@{/usuarios/guardarUsuario}"
+                  method="post"
+                  th:object="${usuario}">   
+                
+                <input type="hidden" name="id_Usuario" th:field="*{id_Usuario}"/>
+                
+                <label for="nombre" th:text="#{usuariosM.nombre}">Nombre del usuario:</label>
+                <input type="text" name="nombre" th:field="*{nombre}"/>
+                <br>
+                    
+                <label for="correo" th:text="#{usuariosM.correo}">Correo del usuario:</label>
+                <input type="email" name="correo" th:field="*{correo}"/>
+                <br>
+                    
+                <label for="cedula" th:text="#{usuariosM.cedula}">Cedula del usuario:</label>
+                <input type="text" name="cedula" th:field="*{cedula}"/>
+                <br>
+                    
+                <label for="username" th:text="#{usuariosM.user}">Username:</label>
+                <input type="text" name="username" th:field="*{username}">
+                <br>
+                    
+                <label for="password" th:text="#{usuariosM.clave}">Contraseña:</label>
+                <input type="text" name="password" th:field="*{password}"/>
+                <br>
+                    
+                <label for="idrol" th:text="#{usuariosM.rol}">Rol del usuario:</label>
+                <input type="text" name="idrol" th:field="*{idRol}"/>
+                <br>
+
+                <input type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}">
+                    
+            </form>
+        </div>
+    </div>
+    <footer th:replace="layout/plantilla :: footer"/>
+</body>
+</html>
