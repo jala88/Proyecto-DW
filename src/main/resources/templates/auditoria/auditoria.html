@@ -41,11 +41,22 @@
                     </tr>
                 </tbody>
             </table>
+           
         </div>
+        
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auditoria/ReporteAuditoria}"> 
+                    <i>Reporte</i>
+                </a>
+            </div>
+        
+        
         <div th:if="${auditorias == null or auditorias.empty}"> 
             <p style="color: black;" th:text="#{auditoria.mensaje2}">En este momento no tenemos ningun auditor en lista</p>
         </div>
     </div>
+    <center>
     <footer th:replace="layout/plantilla :: footer"/>
+   </center>
 </body>
 </html>
