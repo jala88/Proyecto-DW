@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        
+
 //        auth.inMemoryAuthentication()
 //                .withUser("Admin")
 //                .password("{noop}123")
@@ -26,27 +26,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .withUser("Usuario")
 //                .password("{noop}123")
 //                .roles("USER");
-
         auth.userDetailsService(userDetailsService);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/auditor/nuevoAuditor", "/auditor/guardarAuditor",
-                        "/auditor/modifica/**", "/auditor/eliminar/**",
-                        "/auditoria/nuevaAuditoria", "/auditoria/guardarAuditoria",
-                        "/auditoria/modifica/**", "/auditoria/eliminar/**",
-                        "/solicitarAuditoria/nuevaSolicitud", "/solicitarAuditoria/guardarSolicitud",
-                        "/solicitarAuditoria/modifica/**", "/solicitarAuditoria/eliminar/**",
-                        "/fqa/fqa", "/material/material", "/noticias/noticias")
-                .hasRole("ADMIN")
                 .antMatchers("/auditoria/nuevaAuditoria", "/auditoria/guardarAuditoria",
                         "/auditoria/modifica/**", "/auditoria/eliminar/**",
                         "/solicitarAuditoria/nuevaSolicitud", "/solicitarAuditoria/guardarSolicitud",
                         "/solicitarAuditoria/modifica/**", "/solicitarAuditoria/eliminar/**",
                         "/fqa/fqa", "/material/material", "/noticias/noticias")
-                .hasAnyRole("USER")
+                .hasAnyRole("ADMIN", "USER")
+                .antMatchers("/auditor/nuevoAuditor", "/auditor/guardarAuditor",
+                        "/auditor/modifica/**", "/auditor/eliminar/**",
+                        "/usuarios/nuevoUsuario", "/usuarios/guardarUsuario",
+                        "/usuarios/modifica/**", "/usuarios/eliminar/**",
+                        "/auditoria/ReporteAuditoria")
+                .hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login")

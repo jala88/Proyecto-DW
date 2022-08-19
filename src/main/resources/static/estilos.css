@@ -5,6 +5,24 @@
     margin-top: 25px;
     margin-bottom: 40px;
 }
+
+#imagenAU{
+    height: 95px;
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+#sidebarAU{
+    width: 200px;
+    height: 95%;
+    border-radius: 15px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
 #sidebar{
     width: 200px;
     height: 95%;
