@@ -6,34 +6,108 @@
         <title th:text="#{material.titulo}">Material de apoyo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
-    <body style="background-color: #29b1b7" class="bodyK">
+    <body style="background-color: #006A96">
         <div class="row">
-            <div class="col-3" id="sidebar" style="background-color: lightgray;">
-                <div class="row">
-                    <div class="mx-auto" style="width: 250px;">
-                        <img src="https://imgs.search.brave.com/prs_70H82jzm39dNmP0z5nh2xy7Y4JPJgXN-fDGWxik/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5R/OXJzWnBkNHRjVmRa/QW1lQ2hndFhBSGFI/YSZwaWQ9QXBp"
-                             alt="" class="rounded-circle" id="imagen">
-                    </div>
-                    <div class="row" style="gap:85px">
-                        <!-- Ponerles un a cada uno para conectarlos a otra pagina -->
-                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
-                    </div>
-                    <div class="col-xs-12" style="height:200px;"></div>
-                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
-                </div>
+            <div class="col-3"> 
+            
+            </div>
+            <div class="col-9"> 
+                <section id="sectionG"> 
+                    <section th:replace="layout/plantilla :: sidebar2"/>
+                </section>
             </div>
             <section id="sectionG">
-                <header><h1><span style="color: #000;" th:text="#{material.titulo2}">Material de apoyo para aprender 5S</span></h1></header>
-                <div class="col-9">
-                    <div class="col" id="centerG">
+                <header><h1><span style="color: black;" th:text="#{material.titulo2}">Material de apoyo para aprender 5S</span></h1></header>
+                    <br>
+                    <br>
+                    <br>
+                <div class="d-flex position-relative" style="background-color: #cccccc">
+                <img src="/imagenes/mente-profesional-logo-full.jpg" class="flex-shrink-0 me-3" width="110" height="120" alt="">
+                <div>
+                  <h5 class="mt-0" style="color: black">Guía: ¿Te cuesta organizarte? El método 5S es para ti</h5>
+                  <p style="color: black"> ¿Buscas una forma de organizarte? ¿Ya probaste diversos métodos 
+                     y no te han dado efecto? Por eso te ofrecemos otro opción,esta vez las 
+                     5S principios básicos y simples para lograr tus objetivos. </p>
+                  <a href="http://www.menteprofesional.com/organizarte-metodo-5s/" class="stretched-link">Ir a guia 1</a>
+                </div>
+                </div>
+                <br>
+                    <br>
+                    <br>
+                <div class="d-flex position-relative" style="background-color: #cccccc">
+                <img src="/imagenes/safety.jpg" class="flex-shrink-0 me-3" width="110" height="143" alt="">
+                <div>
+                  <h5 class="mt-0" style="color: black">¿Que es 5S?</h5>
+                  <p style="color: black"> 5S es una forma sistemática de gestión visual 
+                      que utiliza todo, desde cinta de piso hasta manuales de operaciones. 
+                      No se trata solo de limpieza y organización; también se trata de maximizar 
+                      la eficiencia y el beneficio. 5S es un marco que enfatiza el uso de una mentalidad
+                      y herramientas especificas para crear eficiencia y valor. Implica la observación, 
+                      el análisis, la colaboración y la búsqueda de residuos, 
+                      y también implica la practica de eliminar desechos. </p>
+                  <a href="https://www.creativesafetysupply.com/content/education-research/5S-spanish/index.html" class="stretched-link">Ir a guia 2</a>
+                </div>
+                </div>
+                <br>
+                    <br>
+                    <br>
+                <div class="d-flex position-relative" style="background-color: #cccccc">
+                <img src="/imagenes/pdf.jpg" class="flex-shrink-0 me-3" width="110" height="190" alt="">
+                <div>
+                  <h5 class="mt-0" style="color: black">PROPUESTA GUÍA BASADA EN LA TÉCNICA DE LAS 5S COMO
+                                                        HERRAMIENTA BÁSICA PARA MEJORAR LA PRODUCTIVIDAD EN LA
+                                                        BODEGA DE LA UNIDAD REGIONAL SEMAP</h5>
+                  <p style="color: black"> Debido a la globalización, en la actualidad el mejoramiento de la calidad y
+                                           productividad se hace fundamental para que una empresa permanezca en el
+                                           mercado. Sin embargo, para comenzar este proceso de mejora, es indispensable
+                                           iniciar con un cambio de hábitos, métodos y enfoque que fortalezcan la disciplina,
+                                           el orden y la cooperación entre todos los miembros de una organización. A través
+                                           de la técnica de las 5s, como metodología orientada a lograr espacios más
+                                           productivos, agradables y seguros, es posible conseguirlo.  </p>
+                  <a href="https://bibliotecadigital.univalle.edu.co/bitstream/handle/10893/10757/0504131.pdf?sequence=1" class="stretched-link">Ir a guia 3</a>
+                </div>
+                </div>
+                <br>
+                    <br>
+                    <br>
+                <div class="d-flex position-relative" style="background-color: #cccccc">
+                <img src="/imagenes/logo-CAS.jpg" class="flex-shrink-0 me-3" width="110" height="190" alt="">
+                <div>
+                  <h5 class="mt-0" style="color: black">Manual de implementacion de 5'S</h5>
+                  <p style="color: black"> Las 5 S puede desarrollarse con cierta independencia al SGC, lo que constituirá
+                                            un trampolín de sensibilización para lanzar a continuación esta acción. En
+                                            cualquier caso, el éxito de las 5 S y su perpetuidad exigen un compromiso total por
+                                            parte del personal operativo como de la línea jerárquica para inducir un cambio en
+                                            el estado de animo, actitud y comportamiento de la organización, lo que garantiza
+                                            el proceso de puesta en marcha de la Gestión de la Calidad Total.
+                                            Este manual servirá para orientar a todo el personal, en la implementación
+                                            (técnicas, procedimientos y auditorias de las 5 S) y en especial a los subdirectores
+                                            y jefes de oficinas que asumirán un rol de facilitadores al interior de sus áreas de
+                                            trabajo, motivando a su personal para garantizar el éxito del programa. </p>
+                  <a href="https://www.eumed.net/cursecon/libreria/2004/5s/41.pdf" class="stretched-link">Ir a guia 4</a>
+                </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              
+<!--                <header><h1><span style="color: black;" th:text="#{material.titulo2}">Material de apoyo para aprender 5S</span></h1></header>
+                    <br>
+                    <br>
+                    <br>
                         <div class="col-md-8 offset-md-2">
                             <div style="background-color: lightgray;" id="guia">
                                 <a href="http://www.menteprofesional.com/organizarte-metodo-5s/" th:text="#{material.guia1}">Guia 1</a>
@@ -48,9 +122,18 @@
                                 <a href="https://www.eumed.net/cursecon/libreria/2004/5s/41.pdf" th:text="#{material.guia4}">Guia 4</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <br>
+                        <br>
+            -->
+<!--                        <div class="card" style="width: 18rem;">
+                          <img src="/imagenes/5S-Graphic.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                              <h5 class="card-title" style="color: black">Card with stretched link</h5>
+                              <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+                            </div>
+                        </div>
+                            -->
+                            
             </section>            
         </div>
     </body>

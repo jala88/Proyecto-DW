@@ -6,40 +6,30 @@
         <title th:text="#{auditoria.titulo}">Auditorias</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
 
-<body>
+<body style="background-color: #006A96">
     <div class="row">
-        <nav class="nav">
-        <header th:replace="layout/plantilla :: header"/>    
-        </nav>
         <br>
-         <div class="col-2" id="sidebarAU" style="background-color: lightgray;">
-                                <div class="row">
-                                    <div class="mx-auto" style="width: 250px;">
-                                        <img src="https://imgs.search.brave.com/prs_70H82jzm39dNmP0z5nh2xy7Y4JPJgXN-fDGWxik/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5R/OXJzWnBkNHRjVmRa/QW1lQ2hndFhBSGFI/YSZwaWQ9QXBp"
-                                             alt="" class="rounded-circle" id="imagenAU">
-                                    </div>
-                                    <div class="row" style="gap:85px">
-                                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
-                                    </div>
-                                    <div class="col-xs-12" style="height:100px;"></div>
-                                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
-                                </div>
-                            </div>
-        <div class="col-10">    
-        <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{auditoria.mensaje1}">Inscribe la informacion de la auditoria</h2>
+        <div class="col-3">
+            <section th:replace="layout/plantilla :: sidebar"/>
+        </div>
+        <div class="col-9"> 
+        <section id="sectionG">
+        <h2 style="color: black; text-align:center;font-family:sans-serif" th:text="#{auditoria.mensaje1}">Inscribe la informacion de la auditoria</h2>
         <br>
         <h2 style="color: black; text-align:center" th:text="#{auditoria.lista}">Lista de auditorias</h2>
-        <a th:href="@{/auditoria/nuevaAuditoria}" th:text="#{auditoria.nuevo}">Nueva auditoria</a>
+        <div>
+        <a th:href="@{/auditoria/nuevaAuditoria}">
+            <button type="button" class="btn btn-dark" th:text="#{auditoria.nuevo}">Nueva auditoria</button>
+        </a>
+        </div>
+        <br>
         <div th:if="${auditorias!=null and !auditorias.empty}">
             <table class="table table-dark table-hover" border="1" style="text-align: center;">
                 <thead>
@@ -68,7 +58,7 @@
         
         <div sec:authorize="hasRole('ROLE_ADMIN')">
                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auditoria/ReporteAuditoria}"> 
-                    <i>Reporte</i>
+                    <button type="button" class="btn btn-dark">Reporte</button>
                 </a>
             </div>
         
@@ -76,9 +66,7 @@
         <div th:if="${auditorias == null or auditorias.empty}"> 
             <p style="color: black;" th:text="#{auditoria.mensaje2}">En este momento no tenemos ningun auditor en lista</p>
         </div>
-        <center>
-            <footer th:replace="layout/plantilla :: footer"/>
-        </center>
+        </section>
         </div>
     </div>
 </body>

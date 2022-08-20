@@ -5,10 +5,40 @@
     <head>        
         <meta charset="UTF-8">
         <title th:text="#{login.login}">Inicio de Sesion</title>        
-        <link href="/css/logins.css" rel="stylesheet" type="text/css"/>
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/login.css" rel="stylesheet" type="text/css"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body style="background-color: #006A96;">
+        
+        
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+
+              <!-- Icon -->
+              <div class="fadeIn first">
+                  <img src="imagenes/5S-Graphic.png" width="50" height="50"/>
+              </div>
+
+              <!-- Login Form -->
+              <form method="POST" th:action="@{/login}">
+                <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                    
+                <input type="submit" class="fadeIn fourth" value="Log In">
+              </form>
+
+              <!-- Remind Passowrd -->
+              <div id="formFooter">
+                  <p th:text="#{login.mensaje2}">Bienvenido!</p>
+              </div>
+
+        </div>
+    </div>
+        
+<!--          
         <section class="form-login">
 
             <h5 th:text="#{login.login}">Inicio de Sesion</h5>
@@ -23,7 +53,7 @@
                 <p><a href="#" th:text="#{login.mensaje1}">Olvido su clave?</a></p>
 
             </form>
-        </section>
+        </section>-->
 
     </body>
 </html>

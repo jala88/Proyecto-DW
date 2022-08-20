@@ -5,51 +5,83 @@
     <head>
         <title th:text="#{noticias.titulos}">Noticias</title>
         <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="/estilos.css" rel="stylesheet" type="text/css"/>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-                      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-                    </head>
-                    <body style="background-color: #29b1b7" class="bodyK">
-                        <div class="row">
-                            <div class="col-3" id="sidebarAU" style="background-color: lightgray;">
-                                <div class="row">
-                                    <div class="mx-auto" style="width: 250px;">
-                                        <img src="https://imgs.search.brave.com/prs_70H82jzm39dNmP0z5nh2xy7Y4JPJgXN-fDGWxik/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5R/OXJzWnBkNHRjVmRa/QW1lQ2hndFhBSGFI/YSZwaWQ9QXBp"
-                                             alt="" class="rounded-circle" id="imagen">
-                                    </div>
-                                    <div class="row" style="gap:85px">
-                                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
-                                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
-                                    </div>
-                                    <div class="col-xs-12" style="height:200px;"></div>
-                                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
-                                </div>
-                            </div>
-                            <section id="section">
-                                <article>
-                                    <header><h1><span style="color: #000;">Catalunya Wagen implanta las 5S</span></h1></header>
-                                    <div class="col-9">
-                                        <div class="col" id="center">
-                                            <div class="col-md-8 offset-md-2">
-                                                <div style="background-color: lightgray;" id="img-not-g">
-                                                    <img src="/imagenes/imagen_1-704-214.jpg" alt=""/>
-                                                </div>
-                                                <div class="col-md-12" style="background-color: lightgray;" id="img-not-p">
-                                                    <span style="color: #000"><p>Promovido por su nuevo Director de Postventa, Ángel Rodríguez, Catalunya Wagen ha puesto en marcha su plan 5S. Bajo este enigmático nombre se esconde una filosofía de trabajo que, en última instancia, mejorará la satisfacción de nuestros clientes. Las 5S son una creación del sistema productivo japonés que está causando furor en las empresas occidentales. Aplicada a nuestros talleres significa seguir una serie de normas que tienden a la mejora en el orden, la organización y la limpieza en los lugares de trabajo, de forma que se incrementa el bienestar de los operarios y se mejora la productividad del Servicio Postventa.</p></span>
-                                                </div>
-                                                <div class="col-md-12" style="background-color: lightgray;" id="leer-mas">
-                                                    <a href="https://www.volkswagenbarcelona.es/volkswagen/inicio/noticias/articulo/catalunya-wagen-implanta-las-5s/contenido/17600 "th:text="#{noticias.leermas}">Leer mas</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <br>
-                            </section>            
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body style="background-color: #006A96">
+        <div class="row">
+            <div class="col-3">
+                <section th:replace="layout/plantilla :: sidebar2"/>
+            </div>
+            <div class="col-9">
+            <section id="sectionF">
+                    <h1 style="color: black;">Espacio para las noticias semanales sobre 5'S</h1>
+                    <br>
+                    <br>
+                    <br>
+                <article style="background-color: lightgrey">
+                    <header><h2><span style="color: black;"><p>Catalunya Wagen implanta las 5'S</p></span></h2></header>
+                        <br>
+                        <br>
+                        <div>
+                            <img src="/imagenes/imagen_1-704-214.jpg" alt=""/>
                         </div>
-                    </body>
+                        <br>
+                        <br>
+                        <div>
+                        <span style="color: black"><p>Promovido por su nuevo Director de Postventa, 
+                                Ángel Rodríguez, Catalunya Wagen ha puesto en marcha su plan 5S. 
+                                Bajo este enigmático nombre se esconde una filosofía de trabajo que, 
+                                en última instancia, mejorará la satisfacción de nuestros clientes. 
+                                Las 5S son una creación del sistema productivo japonés que está causando 
+                                furor en las empresas occidentales. Aplicada a nuestros talleres significa 
+                                seguir una serie de normas que tienden a la mejora en el orden, la organización 
+                                y la limpieza en los lugares de trabajo, de forma que se incrementa el bienestar de 
+                                los operarios y se mejora la productividad del Servicio Postventa.</p></span>
+                        </div>
+                        <div>
+                        <a style="color: black;" href="https://www.volkswagenbarcelona.es/volkswagen/inicio/noticias/articulo/catalunya-wagen-implanta-las-5s/contenido/17600 "th:text="#{noticias.leermas}">Leer mas</a>
+                        </div>
+                </article>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br> 
+                <article style="background-color: lightgrey">
+                    <header><h2><span style="color: black;"><p>AyA y las 5S en el trabajo</p></span></h2></header>
+                        <br>
+                        <br>
+                        <div>
+                            <img src="/imagenes/aya_facebook_thumbnail.jpg" width="415" height="415"/>
+                        </div>
+                        <br>
+                        <br>
+                        <div>
+                        <span style="color: black"><p>Recientemente, 
+                                se ha empezado a informar y a intentar aplicar en 
+                                la institución el Programa de las 5S. Es una metodología creada en Japón 
+                                en los años 60 por la empresa Toyota, cuyo objetivo es mejorar las condiciones de 
+                                trabajo dirigidas a minimizar el desperdicio, con miras a asegurar que el espacio laboral 
+                                esté sistemáticamente limpio y ordenado y con el cual mejorar la productividad y la seguridad, 
+                                a la vez que se crean procesos eficientes, eficaces y efectivos continuos en aras de propiciar 
+                                un ambiente organizado y altamente motivado.
+                                Las herramientas conceptuales y prácticas con las que se pretende 
+                                lograr tal objetivo son: Seiri (eliminar todo lo innecesario y despejar 
+                                tu mesa de trabajo), Seiton (organizar el espacio de trabajo eficazmente), 
+                                Seiso (no ensuciar), Seiketsu (establecer procedimientos y métodos de trabajo) 
+                                y Shitsuke (respetar las reglas de trabajo mediante la continuidad y la constancia).</p></span>
+                        </div>
+                        <div>
+                        <a style="color: black;" href="https://www.diarioextra.com/Noticia/detalle/393551/aya-y-las-5s-en-el-trabajo" th:text="#{noticias.leermas}">Leer mas</a>
+                        </div>
+                </article>  
+            </section> 
+            </div>    
+        </div>
+    </body>
 </html>

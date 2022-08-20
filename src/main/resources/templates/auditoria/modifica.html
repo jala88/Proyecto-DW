@@ -6,17 +6,30 @@
         <title th:text="#{auditoriaM.titulo}">Modificar Auditoria</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
-    <header th:replace="layout/plantilla :: header"/>
-    <div>
+<body style="background-color: #006A96">
+    <div class="row">
+    <br>
+        <div class="col-3">
+            <section th:replace="layout/plantilla :: sidebar"/>
+        </div>
+    <div class="col-9">
+        <section id="sectionG">
+        <h2 style= "color: black;; text-align:center;font-family:sans-serif" th:text="#{auditoriaM.mensaje1}">Modificar una solicitud</h2>
         <br>
         <br>
-        <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{auditoriaM.mensaje1}">Modificar una solicitud</h2>
-        <br>
-        <br>
-        <h2 th:text="#{auditoriaM.mensaje2}">Auditoria a modificar</h2>
-        <a th:href="@{/}" th:text="#{accion.regresar}">Regresar</a>
+        <h2 style="color: black;" th:text="#{auditoriaM.mensaje2}">Auditoria a modificar</h2>
+        
+        <a th:href="@{/}" >
+            <button type="button" class="btn btn-dark" th:text="#{accion.regresar}">Regresar</button>
+        </a>
+        <br/>
+        <br/>
         <br/>
         <div style="color: black;">
             
@@ -25,7 +38,35 @@
                   th:object="${auditoria}">
                 
                 <input type="hidden" name="id_Auditoria" th:field="*{id_Auditoria}"/>
-                <label for="nombre" th:text="#{auditoriaM.nombre}">Nombre del Auditor encargado:</label>
+                
+                <div class="mb-3">
+                <label for="nombre" class="form-label" th:text="#{auditoriaM.nombre}">Nombre del Auditor encargado:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" th:field="*{auditor}">
+                </div>
+
+                <div class="mb-3">
+                <label for="fecha" class="form-label" th:text="#{auditoriaM.nombre}">Fecha en que se realizo la auditoria:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="fecha" th:field="*{fecha}">
+                </div>
+                
+                <div class="mb-3">
+                <label for="areaAuditada" class="form-label" th:text="#{auditoriaM.area}">Fecha en que se realizo la auditoria:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="areaAuditada" th:field="*{area_auditada}">
+                </div>
+                
+                <div class="mb-3">
+                <label for="calificacion" class="form-label" th:text="#{auditoriaM.calificacion}">Fecha en que se realizo la auditoria:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="calificacion" th:field="*{calificacion}">
+                </div>
+                
+                <button type="submit" class="btn btn-dark" name="guardar" value="Guardar" th:text="#{accion.guardar}">Guardar</button>       
+                
+<!--                <input type="submit" name="guardar" th:text="#{accion.guardar}">-->
+                
+                <!-- comment                                                        -->
+                
+                
+<!--                <label for="nombre" th:text="#{auditoriaM.nombre}">Nombre del Auditor encargado:</label>
                 <input type="text" name="nombre" th:field="*{auditor}"/>
                 <br>
                     
@@ -41,13 +82,12 @@
                 <input type="text" name="calificacion" th:field="*{calificacion}"/>
                 <br>
                     
-                <input type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}">
+                <input type="submit" name="guardar" th:text="#{accion.guardar}">-->
+                    
             </form>
         </div>
-        
+        </section>
     </div>
-    <center>
-    <footer th:replace="layout/plantilla :: footer"/>
-    </center>
+    </div>
 </body>
 </html>

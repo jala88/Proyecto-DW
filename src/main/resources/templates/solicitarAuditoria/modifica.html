@@ -6,24 +6,96 @@
         <title th:text="#{solicitarM.titulo}">Modificar solicitud</title>
         <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
-    <header th:replace="layout/plantilla :: header"/>  
-    <div>
-        <br>
-        <br>
-        <h2 style= "background-color:#29b1b7; text-align:center;font-family:sans-serif" th:text="#{solicitarM.mensaje1}">Modificar una solicitud</h2>
-        <br>
-        <br>
-        <h2 th:text="#{solicitarM.mensaje2}">Solicitud a modificar</h2>
-        <a th:href="@{/}" th:text="#{accion.regresar}">Regresar</a>
+<body style="background-color: #006A96">
+    <div class="row">
+        <div class="col-3"> 
+            <section th:replace="layout/plantilla :: sidebar"/>
+        </div>
+        <div class="col-9"> 
+            <section id="sectionG">
+                <h2 style= "color: black;; text-align:center;font-family:sans-serif" th:text="#{solicitarM.mensaje1}">Modificar una solicitud</h2>
+        <h2 style="color: black;" th:text="#{solicitarM.mensaje2}">Solicitud a modificar</h2>
+        <a th:href="@{/}">
+            <button type="button" class="btn btn-dark" th:text="#{accion.regresar}">Regresar</button>
+        </a>
         <br/>
         <div style="color: black;">
-            <form th:action="@{/solicitarAuditoria/guardarSolicitud}"
+            <form style="display: flex;"
+                  th:action="@{/solicitarAuditoria/guardarSolicitud}"
                   method="post"
                   th:object="${solicitud}">
                 
-                <input type="hidden" name="id_Solicitud" th:field="*{id_Solicitud}"/>
+                <div id="divS">
+                    <input type="hidden" name="id_Solicitud" th:field="*{id_Solicitud}"/>
+
+                    <div class="mb-3">
+                    <label for="nombre" class="form-label" th:text="#{solicitarM.nombre}">Nombre del solicitante:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" th:field="*{nombre_solicitante}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="correo" class="form-label" th:text="#{solicitarM.correo}">Correo del solicitante:</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="correo" th:field="*{correo}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="telefono" class="form-label" th:text="#{solicitarM.telefono}">Telefono del solicitante:</label>
+                    <input type="tel" class="form-control" id="exampleFormControlInput1" name="telefono" th:field="*{telefono}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="cedula" class="form-label" th:text="#{solicitarM.cedula}">Cedula del solicitante:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="cedula" th:field="*{cedula}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="puesto" class="form-label" th:text="#{solicitarM.puesto}">Puesto del solicitante:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="puesto" th:field="*{puesto}">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-dark" name="guardar" value="Guardar" th:text="#{accion.guardar}">Guardar</button>
+                </div>
+                
+                <div id="divS"> 
+                    <div class="mb-3">
+                    <label for="empresa" class="form-label" th:text="#{solicitarM.empresa}">Empresa del solicitante:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="empresa" th:field="*{empresa}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="area_empre" class="form-label" th:text="#{solicitarM.AAA}">Area de la empresa a auditar:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="area_empre" th:field="*{area_empre}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="ced_empre" class="form-label" th:text="#{solicitarM.cedulaJ}">Cedula juridica de la empresa:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="ced_empre" th:field="*{ced_empre}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="correo_empre" class="form-label" th:text="#{solicitarM.correoE}">Correo de la empresa:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="ced_empre" th:field="*{ced_empre}">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="direccion_empre" class="form-label" th:text="#{solicitarM.direccionE}">Direccion de la solicitante:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="direccion_empre" th:field="*{direccion_empre}">
+                    </div>
+                
+                </div>
+                
+                
+                
+                
+                <!-- comment -->
+                
+<!--                <input type="hidden" name="id_Solicitud" th:field="*{id_Solicitud}"/>
                 <label for="nombre" th:text="#{solicitarM.nombre}">Nombre del solicitante:</label>
                 <input type="text" name="nombre" th:field="*{nombre_solicitante}"/>
                 <br>
@@ -64,13 +136,18 @@
                 <input type="text" name="direccion_empre" th:field="*{direccion_empre}"/>
                 <br>
                     
-                <input type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}">
-                    
+                <input type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}">-->
+        
             </form>
+            </div>
+            </section>
         </div>
     </div>
-    <center>
-    <footer th:replace="layout/plantilla :: footer"/>
-    </center>
+    <div>
+        <br>
+        <br>
+        
+        </div>
+    </div>
 </body>
 </html>

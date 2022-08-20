@@ -15,8 +15,8 @@
 }
 
 #sidebarAU{
-    width: 200px;
-    height: 95%;
+    width: 170px;
+    height: 96%;
     border-radius: 15px;
     position: fixed;
     top: 10px;
@@ -40,10 +40,10 @@
     left: 200px;
 }
 #btn{
-    margin-left: 20px;
+    margin-left: 22px;
     width: 150px;
     height: 40px;
-    font-size: 13px;
+    font-size: 11px;
 }
 #cerrar-sesion{
     margin-left: 20px;
@@ -87,27 +87,76 @@
 
     color: white;
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 20%;
-    height: 70%;
+    height: 155%;
     width: 70%;
-    background-color: lightgray;
     padding: 12px;
     overflow: auto;
     text-align: center;
 }
 
-#sectionG{
+#sectionF{
 
     color: white;
     position: absolute;
-    top: 10%;
-    left: 20%;
-    height: 70%;
+    top: 9%;
+    left: 18%;
+    height: 155%;
     width: 70%;
     padding: 12px;
     overflow: auto;
     text-align: center;
+}
+
+
+#sectionG{
+
+    color: white;
+    position: absolute;
+    top: 5%;
+    left: 18%;
+    height: 105%;
+    width: 70%;
+    padding: 12px;
+    overflow: auto;
+    text-align: center;
+}
+
+#devIndex{
+
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    height: 70%;
+    width: 70%;
+    padding: 12px;
+    overflow: auto;
+    text-align: left;
+}
+
+
+#divS{ 
+    
+    margin-left: 15px;
+    left: 20%;
+    height: 110%;
+    width: 70%;
+
+}
+
+#sectionGS{
+
+    color: white;
+    position: absolute;
+    top: 1%;
+    left: 20%;
+    height: 110%;
+    width: 70%;
+    padding: 12px;
+    overflow: auto;
+    text-align: left;
 }
 
 #centerG{
@@ -120,11 +169,9 @@
 }
 
 #guia{
-
+    
     width: 1000px;
     height: 100px;
-    margin-left: 40px;
-    margin-top:100px;
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
@@ -153,19 +200,6 @@
     position: fixed;
     top: 120px;
     left: 200px;
-}
-
-#fqa{
-
-    width: 1000px;
-    height: 100px;
-    margin-left: 40px;
-    margin-top:100px;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 details{ 

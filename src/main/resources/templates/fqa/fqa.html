@@ -6,36 +6,25 @@
         <title th:text="#{pf.titulo}">PF</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
-    <body style="background-color: #29b1b7" class="bodyK">
+    <body style="background-color: #006A96">
         <div class="row">
-            <div class="col-3" id="sidebar" style="background-color: lightgray;">
-                <div class="row">
-                    <div class="mx-auto" style="width: 250px;">
-                        <img src="https://imgs.search.brave.com/prs_70H82jzm39dNmP0z5nh2xy7Y4JPJgXN-fDGWxik/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5R/OXJzWnBkNHRjVmRa/QW1lQ2hndFhBSGFI/YSZwaWQ9QXBp"
-                             alt="" class="rounded-circle" id="imagen">
-                    </div>
-                    <div class="row" style="gap:85px">
-                        <button class="btn btn-light" id="btn"><a th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.adu}">Administrar auditoria</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.gi}">Generar informe</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.un}">Ultimas noticias</button>
-                        <button class="btn btn-light" id="btn" th:text="#{sidebar.ma}">Material de apoyo</button>
-
-                    </div>
-                    <div class="col-xs-12" style="height:200px;"></div>
-                    <button class="btn btn-light" id="cerrar-sesion" th:text="#{accion.cerraS}">Cerrar sesion</button>
-                </div>
+            <div class="col-3">
+                <section th:replace="layout/plantilla :: sidebar2"/>
             </div>
-            <section id="sectionf">
-                    <header><h1><span style="color: #000;" th:text="#{pd.pf}">PF. Preguntas frecuentes. </span></h1></header>
-                    <div class="col-9">
-                        <div class="col" id="centerf">
-                            <div class="col-md-8 offset-md-2">
-                                <div class="row" id="fqa">
+            <div class="col-9"> 
+                <section id="sectionF">
+                    <h1 style="color: black;">PF. Seccion de preguntas frecuentes.</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-md-8 offset-md-2">
                                     <details> 
                                         <summary>FQA1. Lorem ipsum dolor sit amet consectetur adipiscing elit nibh phasellus 
                                             tristique risus euismod dictumst, porttitor molestie bibendum sagittis vivamus conubia per ligula gravida sem felis?</summary>
@@ -97,13 +86,9 @@
 
                                         </div>
                                     </details>
-                                        
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                <br>
-            </section>            
+                </section>
+            </div>  
         </div>
     </body>
 </html>
