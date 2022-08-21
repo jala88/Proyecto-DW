@@ -58,7 +58,7 @@
         
         <div sec:authorize="hasRole('ROLE_ADMIN')">
                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auditoria/ReporteAuditoria}"> 
-                    <button type="button" class="btn btn-dark">Reporte</button>
+                    <button type="button" class="btn btn-dark" th:text="#{reporte.reporte}">Reporte</button>
                 </a>
             </div>
         

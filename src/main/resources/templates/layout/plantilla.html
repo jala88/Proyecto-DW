@@ -17,8 +17,9 @@
                 <ul class="nav-menu">        
                     <ul class="nav-menu">        
                         
-                        <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/usuarios/usuario}" sec:authorize="hasRole('ROLE_ADMIN')">Opciones de ADMIN</a></li>
-                        <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/auditoria/auditoria}" sec:authorize="hasRole('ROLE_USER')">Opciones de USER</a></li>
+                        <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/usuarios/usuario}" sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{plantilla.admin}">Opciones de ADMIN</a></li>
+                        <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/auditoria/auditoria}" sec:authorize="hasRole('ROLE_USER')" th:text="#{plantilla.user}">Opciones de USER</a></li>
+                        <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/solicitarAuditoria/nuevaSolicitud}" th:text="#{plantilla.solicitarAu}">Solicitar una auditoria</a></li>
                         <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/noticias/noticias}" th:text="#{plantilla.noticias}">Noticias</a></li>
                         <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/fqa/fqa}" th:text="#{plantilla.pf}">PF</a></li>
                         <li class="nav-menu-item"><a style="color: black;" class= "nav-menu-link" th:href="@{/material/material}" th:text="#{plantilla.materialAp}">Material de apoyo</a></li>
@@ -46,10 +47,10 @@
                     <div class="row" style="gap:85px">
                         <!-- Ponerles un a cada uno para conectarlos a otra pagina -->
                         <button class="btn btn-dark" id="btn"><a style="color: white;"th:href="@{/}" th:text="#{sidebar.inicio}">Inicio</a></button>
-                        <button class="btn btn-dark" id="btn" sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white;" th:href="@{/usuarios/usuario}">Administrar Usuarios</a></button>
-                        <button class="btn btn-dark" id="btn"><a style="color: white;" th:href="@{/auditoria/auditoria}">Administrar auditoria</a></button>                        
-                        <button class="btn btn-dark" id="btn" sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white;" th:href="@{/auditor/auditor}">Administrar auditores</a></button>
-                        <button class="btn btn-dark" id="btn"><a style="color: white;" th:href="@{/solicitarAuditoria/solicitar}">Solicitudes de auditoria</a></button>
+                        <button class="btn btn-dark" id="btn" sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white;" th:href="@{/usuarios/usuario}" th:text="#{sidebar.usu}">Administrar Usuarios</a></button>
+                        <button class="btn btn-dark" id="btn"><a style="color: white;" th:href="@{/auditoria/auditoria}" th:text="#{sidebar.auditorias}">Administrar auditoria</a></button>                        
+                        <button class="btn btn-dark" id="btn" sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white;" th:href="@{/auditor/auditor}" th:text="#{sidebar.auditores}">Administrar auditores</a></button>
+                        <button class="btn btn-dark" id="btn"><a style="color: white;" th:href="@{/solicitarAuditoria/solicitar}" th:text="#{sidebar.solicitudesAu}">Solicitudes de auditoria</a></button>
                     </div>
                     <div class="col-xs-12" style="height:100px;"></div>
                     <button class="btn btn-dark" id="cerrar-sesion"><form method="POST" th:action="@{/logout}" style="display: inline">                    

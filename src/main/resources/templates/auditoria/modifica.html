@@ -20,10 +20,10 @@
         </div>
     <div class="col-9">
         <section id="sectionG">
-        <h2 style= "color: black;; text-align:center;font-family:sans-serif" th:text="#{auditoriaM.mensaje1}">Modificar una solicitud</h2>
+        <h2 style= "color: black;; text-align:center;font-family:sans-serif" th:text="#{auditoriaM.mensaje1}">Añadir o modificar una auditoria</h2>
         <br>
         <br>
-        <h2 style="color: black;" th:text="#{auditoriaM.mensaje2}">Auditoria a modificar</h2>
+        <h2 style="color: black;" th:text="#{auditoriaM.mensaje2}">Datos a añadir o modificar</h2>
         
         <a th:href="@{/}" >
             <button type="button" class="btn btn-dark" th:text="#{accion.regresar}">Regresar</button>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="mb-3">
-                <label for="fecha" class="form-label" th:text="#{auditoriaM.nombre}">Fecha en que se realizo la auditoria:</label>
+                <label for="fecha" class="form-label" th:text="#{auditoriaM.fecha}">Fecha en que se realizo la auditoria:</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="fecha" th:field="*{fecha}">
                 </div>
                 

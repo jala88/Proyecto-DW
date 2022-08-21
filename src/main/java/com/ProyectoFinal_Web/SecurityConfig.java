@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/auditoria/nuevaAuditoria", "/auditoria/guardarAuditoria",
+                .antMatchers("/","/index","/auditoria/nuevaAuditoria", "/auditoria/guardarAuditoria",
                         "/auditoria/modifica/**", "/auditoria/eliminar/**",
                         "/solicitarAuditoria/nuevaSolicitud", "/solicitarAuditoria/guardarSolicitud",
                         "/solicitarAuditoria/modifica/**", "/solicitarAuditoria/eliminar/**",

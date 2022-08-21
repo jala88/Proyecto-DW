@@ -19,13 +19,14 @@
         </div>
         <div class="col-9"> 
             <section id="sectionG">
-                <h2 style= "color: black;; text-align:center;font-family:sans-serif" th:text="#{auditorM.mensaje1}">Modificar un auditor</h2>
+                <h2 style= "color: black; text-align:center;font-family:sans-serif" th:text="#{usuariosM.mensaje1}">Añadir o modificar un auditor</h2>
                 <br>
                 <br>
-                <h2 style="color: black;" th:text="#{auditorM.mensaje2}">Auditor a modificar</h2>
+                <h2 style="color: black;" th:text="#{usuariosM.mensaje2}">Datos del auditor a añadir o modificar</h2>
                 <a th:href="@{/}">
                     <button type="button" class="btn btn-dark" th:text="#{accion.regresar}">Regresar</button>
                 </a>
+                <br/>
                 <br/>
                 <div style="color: black;">
                     <form th:action="@{/auditor/guardarAuditor}"
@@ -43,12 +44,7 @@
                         <label for="apellidos" class="form-label" th:text="#{auditorM.apellidos}">Apellidos:</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" name="apellidos" th:field="*{apellidos}">
                         </div>
-                        
-                        <div class="mb-3">
-                        <label for="apellidos" class="form-label" th:text="#{auditorM.apellidos}">Apellidos:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="apellidos" th:field="*{apellidos}">
-                        </div>
-                        
+                          
                         <div class="mb-3">
                         <label for="correo" class="form-label" th:text="#{auditorM.correo}">Correo del auditor:</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1" name="correo" th:field="*{correo}">
