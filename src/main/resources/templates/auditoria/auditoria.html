@@ -4,13 +4,7 @@
       xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head >
         <title th:text="#{auditoria.titulo}">Auditorias</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-        <link href="/estilos.css" rel="stylesheet" type="text/css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <section th:replace="layout/plantilla :: head"/>
     </head>
 
 <body style="background-color: #006A96">
@@ -24,6 +18,7 @@
         <h2 style="color: black; text-align:center;font-family:sans-serif" th:text="#{auditoria.mensaje1}">Inscribe la informacion de la auditoria</h2>
         <br>
         <h2 style="color: black; text-align:center" th:text="#{auditoria.lista}">Lista de auditorias</h2>
+        <br>
         <div>
         <a th:href="@{/auditoria/nuevaAuditoria}">
             <button type="button" class="btn btn-dark" th:text="#{auditoria.nuevo}">Nueva auditoria</button>
@@ -48,8 +43,8 @@
                         <td th:text="${auditoria.fecha}"></td>
                         <td th:text="${auditoria.area_auditada}"></td>
                         <td th:text="${auditoria.calificacion}"></td>   
-                        <td><a th:href="@{/auditoria/modifica/} + ${auditoria.id_Auditoria}">Modificar</a></td>
-                        <td><a th:href="@{/auditoria/eliminar/} + ${auditoria.id_Auditoria}">Eliminar</a></td>
+                        <td><a th:href="@{/auditoria/modifica/} + ${auditoria.id_Auditoria}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td><a th:href="@{/auditoria/eliminar/} + ${auditoria.id_Auditoria}"><i class="fa-solid fa-trash-can"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -57,7 +52,7 @@
         </div>
         
         <div sec:authorize="hasRole('ROLE_ADMIN')">
-                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auditoria/ReporteAuditoria}"> 
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auditoria/ReporteAuditoria}">
                     <button type="button" class="btn btn-dark" th:text="#{reporte.reporte}">Reporte</button>
                 </a>
             </div>
